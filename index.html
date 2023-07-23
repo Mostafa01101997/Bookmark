@@ -1,0 +1,97 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookmark</title>
+    <link rel="icon" href="./image/bookmark.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <!-- ^=======> Bootstrap Style Sheet -->
+    <link rel="stylesheet" href="./CSS/bootstrap.min.css" />
+    <!-- ^=======> Bootstrap Icos -->
+    <link rel="stylesheet" href="./CSS/bootstrap-icons.css" />
+    <!-- ^=======> Font awesome library -->
+    <link rel="stylesheet" href="./CSS/all.min.css" />
+    <!-- ^=======> Main Style sheet -->
+    <link rel="stylesheet" href="./CSS/style.css" />
+    <!-- ^=======> Media query-->
+    <link rel="stylesheet" href="./CSS/media.css" />
+</head>
+
+<body>
+    <div class="container m-auto  text-center mt-5 contain">
+        <h1 class="py-2 position-relative w-25 m-auto ">Bookmarker</h1>
+        <div class="bookmark mt-5 m-3 border-dark p-3">
+            <h2>
+                <i class="fa-solid fa-bookmark"></i>
+                Bookmark your favorite sites
+                <i class="fa-solid fa-bookmark"></i>
+            </h2>
+            <div class="bookmark-first w-100 mb-4  d-flex flex-column justify-content-start mt-3">
+                <label for="bookmarkName " class="w-25 text-start pb-2">
+                    <i class="fa-solid fa-book-bookmark pe-2"></i>
+                    Site Name
+                </label>
+                <input type="text" class="form-control  " id="bookmarkName" placeholder="Bookmark Name" oninput="checkedData()">
+            </div>
+            <div class="bookmark-second mb-5 w-100 d-flex flex-column justify-content-start">
+                <label for="bookmarkUrl " class="w-25 text-start pb-2">
+                    <i class="fa-solid fa-link pe-2"></i>
+                    Site Url
+                </label>
+                <input type="text" class="form-control " id="bookmarkUrl" placeholder="Bookmark Url" oninput="checkUrl()">
+            </div>
+            <button class="btn btn-danger  w-25" onclick="add()">Submit</button>
+
+        </div>
+        <table class="table mt-4 text-center bg-light">
+            <thead>
+                <th class="text-capitalize">index</th>
+                <th class="text-capitalize">Website Name</th>
+                <th class="text-capitalize">Visit</th>
+                <th class="text-capitalize">Delete</th>
+            </thead>
+            <tbody id="tableContent">
+
+            </tbody>
+        </table>
+
+    </div>
+    <div class="position-absolute start-0 top-0 bottom-0  w-100 alertbox d-none" id="alertbox">
+        <div class="position-absolute alertValidate w-50 bg-white p-2 border-3 rounded-3 z-3 ">
+            <div class="alertHead  d-flex justify-content-between align-items-center ">
+                <div class="iconHead d-flex mb-2">
+                    <span class="rounded-circle me-2"></span>
+                    <span class="rounded-circle me-2"></span>
+                    <span class="rounded-circle me-2"></span>
+                </div>
+                <button class="btn" id="closeAlert" onclick="closeBoxalert()">
+                    <i class="fa-solid fa-xmark close fs-3"></i>
+                </button>
+            </div>
+            <p class="m-0 pb-2 fw-bolder fs-5 mb-2 ">
+                Site Name or Url is not valid, Please follow the rules below :
+            </p>
+            <ol class="rle list-unstyled m-0 mb-2">
+                <li>
+                    <i class="fa-regular fa-circle-right p-2 "></i>Site name must
+                    contain at least 3 characters
+                </li>
+                <li>
+                    <i class="fa-regular fa-circle-right p-2"></i>Site URL must be a
+                    valid one
+                </li>
+            </ol>
+
+        </div>
+    </div>
+
+
+    <script src="./js/index.js"></script>
+    <script src="./js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
